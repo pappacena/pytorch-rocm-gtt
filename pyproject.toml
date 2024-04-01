@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["rochacbruno"]
 readme = "README.md"
+build = "build.py"
 
 [tool.poetry.dependencies]
 python = "^3.12"

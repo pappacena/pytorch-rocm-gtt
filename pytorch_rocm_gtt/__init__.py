@@ -1,3 +1,9 @@
-from .base import BaseClass, base_function
+def patch():
+    import torch
 
-__all__ = ["BaseClass", "base_function"]
+    new_alloc = torch.cuda.memory.CUDAPluggableAllocator(
+        "gttalloc.so",
+        "gtt_alloc",
+        "gtt_free",
+    )
+    torch.cuda.memory.change_current_allocator(new_alloc)
