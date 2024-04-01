@@ -24,6 +24,8 @@ import pytorch_rocm_gtt
 pytorch_rocm_gtt.patch()
 ```
 
+`hipcc` command should be in your `$PATH`.
+
 ## Development
 
 Read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
