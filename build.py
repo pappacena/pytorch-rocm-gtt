@@ -2,7 +2,7 @@ import subprocess
 
 subprocess.run([
     "hipcc",
-    "pytorch_rocm_gtt/gttalloc.cc",
+    "pytorch_rocm_gtt/gttalloc.c",
     "-o",
     "pytorch_rocm_gtt/gttalloc.so",
     "-shared",
