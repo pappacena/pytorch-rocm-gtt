@@ -7,7 +7,7 @@ readme = "README.md"
 build = "build.py"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.9"
 
 
 [tool.poetry.group.dev.dependencies]
