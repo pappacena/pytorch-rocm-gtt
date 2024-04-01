@@ -1,7 +1,7 @@
 """
-project_name base module.
+pytorch_rocm_gtt base module.
 
-This is the principal module of the project_name project.
+This is the principal module of the pytorch_rocm_gtt project.
 here you put your main classes and objects.
 
 Be creative! do whatever you want!
