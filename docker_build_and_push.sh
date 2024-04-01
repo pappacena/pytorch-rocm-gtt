@@ -7,7 +7,6 @@ fi
 TAG=$1
 
 docker build -t pappacena/rocm-pytorch:rocm6.0.2_ubuntu22.04_py3.10_pytorch_2.1.2 \
-		-f Dockerfile . \
-		--build-arg="rocm/pytorch:rocm6.0.2_ubuntu22.04_py3.10_pytorch_2.1.2" \
-		--build-arg="LIB_VERSION=${TAG}"
+		--build-arg="BASE_IMAGE=rocm/pytorch:rocm6.0.2_ubuntu22.04_py3.10_pytorch_2.1.2" \
+		--build-arg="LIB_VERSION=${TAG}" .
 docker push pappacena/rocm-pytorch:rocm6.0.2_ubuntu22.04_py3.10_pytorch_2.1.2
