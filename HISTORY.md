@@ -2,8 +2,9 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+0.1.4 (2024-04-02)
+------------------
+- Release: version 0.1.3 🚀 [Thiago F Pappacena]
 - Adding better description to the project. [Thiago F Pappacena]
 - Release: version 0.1.3 🚀 [Thiago F Pappacena]
 
