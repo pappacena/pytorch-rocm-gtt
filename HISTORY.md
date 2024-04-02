@@ -4,6 +4,8 @@ Changelog
 
 0.1.1 (2024-04-02)
 ------------------
+- Fmt. [Thiago F Pappacena]
+- Release: version 0.1.1 🚀 [Thiago F Pappacena]
 - Release: version 0.1.1 🚀 [Thiago F Pappacena]
 - Cleanup. [Thiago F Pappacena]
 - Release: version 0.1.1 🚀 [Thiago F Pappacena]
