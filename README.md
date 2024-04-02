@@ -34,6 +34,12 @@ import torch
 torch.rand(1000).to("cuda")
 ```
 
+## Compatibility
+In order to use this package, your APU must be compatible with ROCm in the first place.
+
+Check AMD documentation on how to install ROCm for your distribution.
+
+
 ## Development
 
 Read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
