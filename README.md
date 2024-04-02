@@ -29,3 +29,11 @@ pytorch_rocm_gtt.patch()
 ## Development
 
 Read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+### How to release
+
+Update pyproject.toml file with the desired version, and run `make release` to create the new tag.
+
+After that, the github action will publish to pypi.
+
+Once it is published, run the `docker_build_and_publish.sh <version-number>` script to update the docker images.
