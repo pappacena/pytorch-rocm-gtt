@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytorch-rocm-gtt"
-version = "0.1.2"
+version = "0.1.4"
 description = "A memory allocator for PyTorch to allow using more memory than the iGPU reserved"
 authors = ["rochacbruno"]
 readme = "README.md"
