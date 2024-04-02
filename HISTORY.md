@@ -4,6 +4,8 @@ Changelog
 
 (unreleased)
 ------------
+- Fix poetry lock. [Thiago F Pappacena]
+- Release: version  🚀 [Thiago F Pappacena]
 - Fix makefile. [Thiago F Pappacena]
 - Fix install and release. [Thiago F Pappacena]
 - Release: version 0.2.0 🚀 [Thiago F Pappacena]
