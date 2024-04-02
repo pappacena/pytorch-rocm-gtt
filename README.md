@@ -26,6 +26,14 @@ pytorch_rocm_gtt.patch()
 
 `hipcc` command should be in your `$PATH`.
 
+After that, just allocate GPU memory as you would with cuda:
+
+```py
+import torch
+
+torch.rand(1000).to("cuda")
+```
+
 ## Development
 
 Read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
