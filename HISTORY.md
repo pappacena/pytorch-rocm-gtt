@@ -2,8 +2,10 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+0.1.1 (2024-04-02)
+------------------
+- Fix. [Thiago F Pappacena]
+- Release: version  🚀 [Thiago F Pappacena]
 - Release: version  🚀 [Thiago F Pappacena]
 - Release: version  🚀 [Thiago F Pappacena]
 - Release: version  🚀 [Thiago F Pappacena]
