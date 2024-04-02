@@ -4,9 +4,20 @@
 [![CI](https://github.com/pappacena/pytorch-rocm-gtt/actions/workflows/main.yml/badge.svg)](https://github.com/pappacena/pytorch-rocm-gtt/actions/workflows/main.yml)
 
 
-Python package to allow ROCm to overcome the reserved iGPU memory limits.
+Python package to allow PyTorch ROCm to overcome the reserved iGPU memory limits.
 
 Based on https://github.com/pomoke/torch-apu-helper/tree/main, after discussion here: https://github.com/ROCm/ROCm/issues/2014
+
+## About
+If you need to run machine learning workload, you usually need a bunch of GPU memory to hold your PyTorch tensors and your model. Ryzen APU (integrated GPUs) are usually quite good, and more recent versions of ROCm added support to some of those Radeon integrated graphics, but a major limitation is the amount of VRAM usually reserved to those GPUs.
+
+But the VRAM used by those GPUs is actually shared with system memory, so there is no real reason for PyTorch to be
+limited by the reserved memory only: it could potentially use the whole system RAM memory anyway.
+
+This package patches pytorch at runtime, allowing it to allocate more memory than what is currently reserved in system BIOS for the integrated card.
+
+All you need is ROCm and drivers properly installed ([check AMD documentation](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/how-to/native-install/index.html)), a `pip install pytorch_rocm_gtt` and a `pytorch_rocm_gtt.patch()` call in the begining of your script (thanks, [@segurac](https://github.com/segurac)!).
+
 
 ## Install it from PyPI
 
