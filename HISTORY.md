@@ -2,6 +2,12 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- Adding better description to the project. [Thiago F Pappacena]
+- Release: version 0.1.3 🚀 [Thiago F Pappacena]
+
+
 0.1.3 (2024-04-02)
 ------------------
 - Add github link to pypi. [Thiago F Pappacena]
