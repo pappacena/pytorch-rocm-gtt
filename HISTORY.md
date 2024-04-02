@@ -2,6 +2,13 @@ Changelog
 =========
 
 
+0.1.2 (2024-04-02)
+------------------
+- Improving documentation. [Thiago F Pappacena]
+- Docs. [Thiago F Pappacena]
+- Release: version 0.1.1 🚀 [Thiago F Pappacena]
+
+
 0.1.1 (2024-04-02)
 ------------------
 - Fix test. [Thiago F Pappacena]
