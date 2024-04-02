@@ -1,7 +1,3 @@
-.ONESHELL:
-ENV_PREFIX=$(shell python -c "if __import__('pathlib').Path('.venv/bin/pip').exists(): print('.venv/bin/')")
-USING_POETRY=$(shell grep "tool.poetry" pyproject.toml && echo "yes")
-
 .PHONY: help
 help:             ## Show the help.
 	@echo "Usage: make <target>"
@@ -13,40 +9,35 @@ help:             ## Show the help.
 .PHONY: show
 show:             ## Show the current environment.
 	@echo "Current environment:"
-	@if [ "$(USING_POETRY)" ]; then poetry env info && exit; fi
-	@echo "Running using $(ENV_PREFIX)"
-	@$(ENV_PREFIX)python -V
-	@$(ENV_PREFIX)python -m site
-
+	poetry env info
+	
 .PHONY: install
 install:          ## Install the project in dev mode.
 	pip install poetry
-	@if [ "$(USING_POETRY)" ]; then poetry install --with dev && exit; fi
-	@echo "Don't forget to run 'make virtualenv' if you got errors."
-	$(ENV_PREFIX)pip install -e .[test]
+	poetry install --with dev
 
 .PHONY: fmt
 fmt:              ## Format code using black & isort.
-	$(ENV_PREFIX)isort pytorch_rocm_gtt/
-	$(ENV_PREFIX)black -l 79 pytorch_rocm_gtt/
-	$(ENV_PREFIX)black -l 79 tests/
+	poetry run isort pytorch_rocm_gtt/
+	poetry run black -l 79 pytorch_rocm_gtt/
+	poetry run black -l 79 tests/
 
 .PHONY: lint
 lint:             ## Run pep8, black, mypy linters.
-	$(ENV_PREFIX)flake8 pytorch_rocm_gtt/
-	$(ENV_PREFIX)black -l 79 --check pytorch_rocm_gtt/
-	$(ENV_PREFIX)black -l 79 --check tests/
-	$(ENV_PREFIX)mypy --ignore-missing-imports pytorch_rocm_gtt/
+	poetry run flake8 pytorch_rocm_gtt/
+	poetry run black -l 79 --check pytorch_rocm_gtt/
+	poetry run black -l 79 --check tests/
+	poetry run mypy --ignore-missing-imports pytorch_rocm_gtt/
 
 .PHONY: test
 test: lint        ## Run tests and generate coverage report.
-	$(ENV_PREFIX)pytest -v --cov-config .coveragerc --cov=pytorch_rocm_gtt -l --tb=short --maxfail=1 tests/
-	$(ENV_PREFIX)coverage xml
-	$(ENV_PREFIX)coverage html
+	poetry run pytest -v --cov-config .coveragerc --cov=pytorch_rocm_gtt -l --tb=short --maxfail=1 tests/
+	poetry run coverage xml
+	poetry run coverage html
 
 .PHONY: watch
 watch:            ## Run tests on every change.
-	ls **/**.py | entr $(ENV_PREFIX)pytest -s -vvv -l --tb=long --maxfail=1 tests/
+	ls **/**.py | entr poetry run pytest -s -vvv -l --tb=long --maxfail=1 tests/
 
 .PHONY: clean
 clean:            ## Clean unused files.
@@ -65,17 +56,6 @@ clean:            ## Clean unused files.
 	@rm -rf docs/_build
 	@rm pytorch_rocm_gtt/*.so
 
-.PHONY: virtualenv
-virtualenv:       ## Create a virtual environment.
-	@if [ "$(USING_POETRY)" ]; then poetry install && exit; fi
-	@echo "creating virtualenv ..."
-	@rm -rf .venv
-	@python3 -m venv .venv
-	@./.venv/bin/pip install -U pip
-	@./.venv/bin/pip install -e .[test]
-	@echo
-	@echo "!!! Please run 'source .venv/bin/activate' to enable the environment !!!"
-
 .PHONY: release
 release:          ## Create a new tag for release.
 	@echo "WARNING: This operation will create s version tag and push to github"
@@ -83,7 +63,7 @@ release:          ## Create a new tag for release.
 	@echo "creating git tag : $${TAG}"
 	@git tag $${TAG}
 	@echo "$${TAG}" > pytorch_rocm_gtt/VERSION
-	@$(ENV_PREFIX)gitchangelog > HISTORY.md
+	@poetry run gitchangelog > HISTORY.md
 	@git add pytorch_rocm_gtt/VERSION HISTORY.md
 	@git commit -m "release: version $${TAG} 🚀"
 	@git push -u origin HEAD --tags
@@ -92,5 +72,5 @@ release:          ## Create a new tag for release.
 .PHONY: docs
 docs:             ## Build the documentation.
 	@echo "building documentation ..."
-	@$(ENV_PREFIX)mkdocs build
+	@poetry run mkdocs build
 	URL="site/index.html"; xdg-open $$URL || sensible-browser $$URL || x-www-browser $$URL || gnome-open $$URL
