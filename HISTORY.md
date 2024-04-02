@@ -4,6 +4,8 @@ Changelog
 
 0.1.1 (2024-04-02)
 ------------------
+- Fix deploy. [Thiago F Pappacena]
+- Release: version 0.1.1 🚀 [Thiago F Pappacena]
 - Release: version 0.1.1 🚀 [Thiago F Pappacena]
 - Release: version 0.1.1 🚀 [Thiago F Pappacena]
 - Fix github token. [Thiago F Pappacena]
