@@ -5,6 +5,9 @@ description = "A memory allocator for PyTorch to allow using more memory than th
 authors = ["rochacbruno"]
 readme = "README.md"
 
+[tool.poetry.urls]
+"repository" = "https://github.com/pappacena/pytorch-rocm-gtt"
+
 [tool.poetry.dependencies]
 python = "^3.9"
 
