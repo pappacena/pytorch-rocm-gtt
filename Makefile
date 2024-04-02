@@ -1,3 +1,5 @@
+.ONESHELL:
+
 .PHONY: help
 help:             ## Show the help.
 	@echo "Usage: make <target>"
