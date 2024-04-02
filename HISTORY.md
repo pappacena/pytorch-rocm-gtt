@@ -2,6 +2,12 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- Cleanup. [Thiago F Pappacena]
+- Release: version 0.1.1 🚀 [Thiago F Pappacena]
+
+
 0.1.1 (2024-04-02)
 ------------------
 - Fix. [Thiago F Pappacena]
