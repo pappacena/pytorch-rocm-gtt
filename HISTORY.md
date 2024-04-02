@@ -2,6 +2,12 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- Fix github token. [Thiago F Pappacena]
+- Release: version 0.1.2 🚀 [Thiago F Pappacena]
+
+
 0.1.2 (2024-04-02)
 ------------------
 - Improving documentation. [Thiago F Pappacena]
