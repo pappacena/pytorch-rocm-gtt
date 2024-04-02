@@ -5,6 +5,7 @@ Changelog
 0.1.1 (2024-04-02)
 ------------------
 - Release: version 0.1.1 🚀 [Thiago F Pappacena]
+- Release: version 0.1.1 🚀 [Thiago F Pappacena]
 - Fix github token. [Thiago F Pappacena]
 - Release: version 0.1.2 🚀 [Thiago F Pappacena]
 - Improving documentation. [Thiago F Pappacena]
